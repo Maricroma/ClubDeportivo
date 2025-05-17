@@ -95,7 +95,7 @@ namespace ProyectoClubDeportivo
                     // Usuario válido
                     Usuario usu = lista[0]; // Si querés usar sus datos
                     MessageBox.Show($"¡Bienvenido {usu.Nombre}!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    FormMenu frm = new FormMenu();
+                    FormMenu frm = new FormMenu(usu);
                     this.Hide();
                     frm.Show();
                     

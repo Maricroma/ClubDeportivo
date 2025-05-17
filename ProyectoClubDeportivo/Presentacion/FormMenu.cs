@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoClubDeportivo.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,17 @@ namespace ProyectoClubDeportivo.Presentacion
 {
     public partial class FormMenu : Form
     {
-        public FormMenu()
+        private Usuario usuario;
+
+        public FormMenu(Usuario usuarioLogueado)
         {
             InitializeComponent();
+            usuario = usuarioLogueado;
         }
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-
+            lbUsuarioInfo.Text = $"Bienvenido, {usuario.Nombre} ({usuario.Rol})";
         }
 
         private void AgregarSocio_Click(object sender, EventArgs e)
@@ -32,6 +36,11 @@ namespace ProyectoClubDeportivo.Presentacion
         {
             FormAgregarNoSocio form = new FormAgregarNoSocio();
             form.ShowDialog();
+        }
+
+        private void lbUsuarioInfo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

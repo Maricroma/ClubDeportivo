@@ -30,6 +30,7 @@
         {
             agregarSocio = new Button();
             agregarNoSocio = new Button();
+            lbUsuarioInfo = new Label();
             SuspendLayout();
             // 
             // agregarSocio
@@ -56,12 +57,24 @@
             agregarNoSocio.UseVisualStyleBackColor = false;
             agregarNoSocio.Click += AgregarNoSocio_Click;
             // 
+            // lbUsuarioInfo
+            // 
+            lbUsuarioInfo.AutoSize = true;
+            lbUsuarioInfo.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lbUsuarioInfo.ForeColor = SystemColors.HotTrack;
+            lbUsuarioInfo.Location = new Point(58, 20);
+            lbUsuarioInfo.Name = "lbUsuarioInfo";
+            lbUsuarioInfo.Size = new Size(0, 25);
+            lbUsuarioInfo.TabIndex = 2;
+            lbUsuarioInfo.Click += lbUsuarioInfo_Click;
+            // 
             // FormMenu
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbUsuarioInfo);
             Controls.Add(agregarNoSocio);
             Controls.Add(agregarSocio);
             ForeColor = SystemColors.ButtonHighlight;
@@ -71,11 +84,13 @@
             Text = "Menu";
             Load += FormMenu_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button agregarSocio;
         private Button agregarNoSocio;
+        private Label lbUsuarioInfo;
     }
 }

@@ -39,16 +39,17 @@ namespace ProyectoClubDeportivo.Presentacion
         private void InicializarControles()
         {
             this.Text = "Agregar No Socio";
-            this.Size = new Size(450, 500);
+            this.Size = new Size(550, 600);
             this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
+            this.BackColor = Color.FromArgb(230, 245, 255); // Fondo celeste claro
 
-            int labelWidth = 100;
-            int textBoxWidth = 250;
-            int leftMargin = 30;
-            int topMargin = 30;
-            int spacingY = 35;
+            int labelWidth = 120;
+            int textBoxWidth = 280;
+            int leftMargin = 40;
+            int topMargin = 40;
+            int spacingY = 50;
 
             string[] labels = { "Nombre:", "Apellido:", "DNI:", "Teléfono:", "Email:" };
             TextBox[] textBoxes = new TextBox[labels.Length];
@@ -59,63 +60,68 @@ namespace ProyectoClubDeportivo.Presentacion
                 {
                     Text = labels[i],
                     Location = new Point(leftMargin, topMargin + spacingY * i),
-                    Width = labelWidth
+                    Width = labelWidth,
+                    Font = new Font("Segoe UI", 10, FontStyle.Regular)
                 };
                 this.Controls.Add(label);
 
                 textBoxes[i] = new TextBox()
                 {
                     Location = new Point(leftMargin + labelWidth + 10, topMargin + spacingY * i),
-                    Width = textBoxWidth
+                    Width = textBoxWidth,
+                    Height = 30,
+                    Font = new Font("Segoe UI", 10, FontStyle.Regular)
                 };
                 this.Controls.Add(textBoxes[i]);
             }
 
-            // Asignar a las variables de clase
             txtNombre = textBoxes[0];
             txtApellido = textBoxes[1];
             txtDni = textBoxes[2];
             txtTelefono = textBoxes[3];
             txtEmail = textBoxes[4];
 
-            // Grupo Ficha Médica
             GroupBox gbFicha = new GroupBox()
             {
                 Text = "¿Presenta ficha médica?",
                 Location = new Point(leftMargin, topMargin + spacingY * labels.Length + 10),
-                Size = new Size(380, 60)
+                Size = new Size(420, 70),
+                Font = new Font("Segoe UI", 10, FontStyle.Regular),
+                BackColor = Color.FromArgb(220, 235, 250)
             };
 
             rbFichaSi = new RadioButton()
             {
                 Text = "Sí",
-                Location = new Point(20, 25),
-                AutoSize = true
+                Location = new Point(30, 30),
+                AutoSize = true,
+                Font = new Font("Segoe UI", 10)
             };
             rbFichaNo = new RadioButton()
             {
                 Text = "No",
-                Location = new Point(80, 25),
-                AutoSize = true
+                Location = new Point(90, 30),
+                AutoSize = true,
+                Font = new Font("Segoe UI", 10)
             };
 
             gbFicha.Controls.Add(rbFichaSi);
             gbFicha.Controls.Add(rbFichaNo);
             this.Controls.Add(gbFicha);
 
-            // Botones
-            int botonY = gbFicha.Bottom + 40;
-            int espacioX = 20;
-            int botonAncho = 100;
+            int botonY = gbFicha.Bottom + 50;
+            int espacioX = 25;
+            int botonAncho = 140;
 
             btnGuardar = new Button()
             {
-                Text = "Guardar",
-                Location = new Point(leftMargin, botonY),
-                Size = new Size(botonAncho, 40),
-                BackColor = SystemColors.Highlight,
+                Text = "💾 Guardar",
+                Location = new Point(leftMargin-5, botonY),
+                Size = new Size(botonAncho, 45),
+                BackColor = Color.FromArgb(30, 144, 255),
                 ForeColor = Color.White,
-                FlatStyle = FlatStyle.Flat
+                FlatStyle = FlatStyle.Flat,
+                Font = new Font("Segoe UI", 10, FontStyle.Bold)
             };
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.Click += BtnGuardar_Click;
@@ -123,22 +129,33 @@ namespace ProyectoClubDeportivo.Presentacion
 
             btnLimpiar = new Button()
             {
-                Text = "Limpiar",
-                Location = new Point(btnGuardar.Right + espacioX, botonY),
-                Size = new Size(botonAncho, 40)
+                Text = "🧹 Limpiar",
+                Location = new Point(btnGuardar.Right + espacioX, botonY), 
+                Size = new Size(botonAncho, 45),
+                BackColor = Color.FromArgb(173, 216, 230), // celeste
+                ForeColor = Color.Black,
+                FlatStyle = FlatStyle.Flat,
+                Font = new Font("Segoe UI", 10)
             };
+            btnLimpiar.FlatAppearance.BorderSize = 0;
             btnLimpiar.Click += BtnLimpiar_Click;
             this.Controls.Add(btnLimpiar);
 
             btnVolver = new Button()
             {
-                Text = "Volver",
+                Text = "↩️ Volver",
                 Location = new Point(btnLimpiar.Right + espacioX, botonY),
-                Size = new Size(botonAncho, 40)
+                Size = new Size(botonAncho, 45),
+                BackColor = Color.FromArgb(135, 206, 250), // celeste claro
+                ForeColor = Color.Black,
+                FlatStyle = FlatStyle.Flat,
+                Font = new Font("Segoe UI", 10)
             };
+            btnVolver.FlatAppearance.BorderSize = 0;
             btnVolver.Click += BtnVolver_Click;
             this.Controls.Add(btnVolver);
         }
+
 
         private void FormAgregarSocio_Load(object? sender, EventArgs e)
         {
@@ -196,7 +213,6 @@ namespace ProyectoClubDeportivo.Presentacion
 
         private void BtnGuardar_Click(object? sender, EventArgs e)
         {
-            MessageBox.Show("Click detectado");  // 👈 Probar si el evento se dispara
             if (!ValidarCampos())
                 return;
 
@@ -211,7 +227,6 @@ namespace ProyectoClubDeportivo.Presentacion
             NoSocio noSocio = new NoSocio(nombre, apellido, dni, telefono, email, fichaEntregada);
             NoSocioDAO noSocioDAO = new NoSocioDAO();
             respuesta = noSocioDAO.AgregarNoSocio(noSocio);
-            MessageBox.Show("Respuesta de DAO: " + respuesta); // 👈 Verificás lo que devuelve
 
             bool esnumero = int.TryParse(respuesta, out int codigo);
             if (esnumero)
