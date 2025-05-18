@@ -1,4 +1,4 @@
-
+delimiter // 
 
 create procedure AltaCliente(in Nombre varchar(100),in Apellido varchar(100),in Doc varchar(20), in Telefono varchar(20), in Email varchar(50), in FichaMedica tinyint(1), in FechaInscripcion date, in EsSocio tinyint(1), in Carnet tinyint(1), in FechaProximoPago date, out rta int)
 
