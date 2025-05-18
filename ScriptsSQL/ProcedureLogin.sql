@@ -28,7 +28,7 @@ end
 si queremos probar el procedure se usa call
 ====================================================== */
 
-call IngresoLogin('dato1', 'dato2')//
+call LoginUsuario('dato1', 'dato2')//
 
 /* ===============================
 si los datos de los parametros existen la consulta arroja 1 FILA
