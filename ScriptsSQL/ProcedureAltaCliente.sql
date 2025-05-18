@@ -23,7 +23,7 @@ ___________________________________________________________________________ */
 	end if;
 	
 	if existe = 0 then	 
-		cliente values(filas,Nombre,Apellido,Doc,Telefono,Email,FichaMedica,FechaInscripcion,EsSocio,Carnet,FechaProximoPago);
+		insert into cliente values(filas,Nombre,Apellido,Doc,Telefono,Email,FichaMedica,FechaInscripcion,EsSocio,Carnet,FechaProximoPago);
 		set rta  = filas;
 	else
 		set rta = existe;
