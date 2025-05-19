@@ -17,9 +17,9 @@ ___________________________________________________________________________ */
 	set filas = (select max(Id) + 1 from cliente);
 	
 	/* ---------------------------------------------------------
-		para saber si ya esta almacenado el postulante
+		para saber si ya esta almacenado el cliente
 	------------------------------------------------------- */	
-	set existe = (select count(*) from cliente where where Dni = Doc);
+	set existe = (select count(*) from cliente where Dni = Doc);
 	end if;
 	
 	if existe = 0 then	 
