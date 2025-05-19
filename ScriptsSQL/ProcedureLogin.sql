@@ -12,16 +12,14 @@ Se colocan dos parametros de entrada por eso son in
 uno para el nombre de usuario y el otro para la contraseña
 observar que la longitud debe ser igual que la longitud del atributo de la tabla
 ===================================================================================  */
-begin
-  /* proyecto en la consulta el rol que tiene el usuario que ingresa */
-  
-  select NomRol
-	from usuario u inner join roles r on u.RolUsu = r.RolUsu
-		where NombreUsu = Usu and PassUsu = Pass /* se compara con los parametros */
-			and Activo = 1; /* el usuario debe estar activo */
-
-
-end 
+BEGIN
+  SELECT u.CodUsu, u.NombreUsu, u.PassUsu, r.NomRol
+  FROM usuario u
+  INNER JOIN roles r ON u.RolUsu = r.RolUsu
+  WHERE u.NombreUsu = Usu
+    AND u.PassUsu = Pass
+    AND u.Activo = 1;
+END 
 //
 
 /* ==========================
