@@ -1,0 +1,60 @@
+## Archivos de Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Archivos de compilación
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+*.log
+
+## Paquetes y dependencias
+packages/
+*.nupkg
+*.snupkg
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+
+## Archivos temporales
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+
+## Archivos de configuración específicos del entorno
+*.DotSettings.user
+*.dbmdl
+
+## Archivos generados por Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+## Archivos de publicación
+*.publishsettings
+*.Publish.xml
+
+## Archivos de backup de VS
+*.vspscc
+*.vssscc
+
+## Archivos de Rider o ReSharper
+.idea/
+*.sln.iml
+
+## Base de datos local o archivos MySQL temporales
+*.mdf
+*.ldf
+*.sqlite
+
+## Archivos relacionados con secretos o configuraciones locales
+appsettings.Development.json
+secrets.json
