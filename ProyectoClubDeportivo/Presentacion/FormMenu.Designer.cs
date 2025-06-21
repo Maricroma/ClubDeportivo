@@ -43,7 +43,7 @@
             agregarSocio.Location = new Point(41, 61);
             agregarSocio.Margin = new Padding(2);
             agregarSocio.Name = "agregarSocio";
-            agregarSocio.Size = new Size(172, 39);
+            agregarSocio.Size = new Size(172, 43);
             agregarSocio.TabIndex = 0;
             agregarSocio.Text = "Agregar Socio";
             agregarSocio.UseVisualStyleBackColor = false;
@@ -80,7 +80,7 @@
             pagarCuota.Location = new Point(284, 61);
             pagarCuota.Margin = new Padding(2);
             pagarCuota.Name = "pagarCuota";
-            pagarCuota.Size = new Size(172, 39);
+            pagarCuota.Size = new Size(172, 43);
             pagarCuota.TabIndex = 3;
             pagarCuota.Text = "Pagar cuota";
             pagarCuota.UseVisualStyleBackColor = false;
@@ -90,10 +90,10 @@
             // 
             inscribirActividad.BackColor = SystemColors.Highlight;
             inscribirActividad.FlatStyle = FlatStyle.Flat;
-            inscribirActividad.Location = new Point(284, 131);
+            inscribirActividad.Location = new Point(284, 127);
             inscribirActividad.Margin = new Padding(2);
             inscribirActividad.Name = "inscribirActividad";
-            inscribirActividad.Size = new Size(172, 39);
+            inscribirActividad.Size = new Size(172, 43);
             inscribirActividad.TabIndex = 4;
             inscribirActividad.Text = "Inscribir Actividad";
             inscribirActividad.UseVisualStyleBackColor = false;
@@ -106,7 +106,7 @@
             btnListado.Location = new Point(165, 206);
             btnListado.Margin = new Padding(2);
             btnListado.Name = "btnListado";
-            btnListado.Size = new Size(156, 46);
+            btnListado.Size = new Size(172, 43);
             btnListado.TabIndex = 5;
             btnListado.Text = "Clientes a cobrar";
             btnListado.UseVisualStyleBackColor = false;
