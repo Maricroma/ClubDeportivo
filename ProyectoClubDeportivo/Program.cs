@@ -1,3 +1,5 @@
+using ProyectoClubDeportivo.Presentacion;
+
 namespace ProyectoClubDeportivo
 {
     internal static class Program
@@ -11,7 +13,9 @@ namespace ProyectoClubDeportivo
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormInicio());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new AccesoSistema()); // Nombre corregido
         }
     }
 }
