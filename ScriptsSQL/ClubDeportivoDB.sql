@@ -28,7 +28,7 @@ CONSTRAINT pk_usuario PRIMARY KEY (CodUsu),
 CONSTRAINT fk_usuario FOREIGN KEY(RolUsu) REFERENCES roles(RolUsu)
 );
 
-INSERT INTO usuario(CodUsu,NombreUsu,PassUsu,RolUsu) values
+INSERT INTO usuario(NombreUsu,PassUsu,RolUsu) values
 ('admin','123456',120);
 
 -- Creación de la tabla cliente
