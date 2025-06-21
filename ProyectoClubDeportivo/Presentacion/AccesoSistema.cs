@@ -20,7 +20,7 @@ namespace ProyectoClubDeportivo.Presentacion
             txtServidor.PlaceholderText = "SERVIDOR";
             txtPuerto.PlaceholderText = "3000";
             txtUsuarioDB.PlaceholderText = "USUARIO DB";
-            txtClaveDB.PlaceholderText = "CLAVE DB";
+            txtClaveDB.PlaceholderText = "";
             txtClaveDB.UseSystemPasswordChar = true;
 
         }
@@ -95,7 +95,7 @@ namespace ProyectoClubDeportivo.Presentacion
             // este evento se ejecuta cuando se va el foco 
             if (string.IsNullOrWhiteSpace(txtClaveDB.Text))
             {
-                txtClaveDB.Text = "CLAVE DB";
+                txtClaveDB.Text = "";
                 txtClaveDB.UseSystemPasswordChar = false; // Muestra el placeholder como texto normal
             }
         }
@@ -112,8 +112,7 @@ namespace ProyectoClubDeportivo.Presentacion
             // Validación mejorada: ignora placeholders
             if (servidor == "SERVIDOR" || string.IsNullOrWhiteSpace(servidor) ||
                 puerto == "3000" || string.IsNullOrWhiteSpace(puerto) ||
-                usuario == "USUARIO DB" || string.IsNullOrWhiteSpace(usuario) ||
-                clave == "CLAVE DB" || string.IsNullOrWhiteSpace(clave))
+                usuario == "USUARIO DB" || string.IsNullOrWhiteSpace(usuario))
             {
                 MessageBox.Show("Por favor, complete todos los campos correctamente.", "Campos Incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -167,6 +166,11 @@ namespace ProyectoClubDeportivo.Presentacion
 
 
 
+
+        }
+
+        private void AccesoSistema_Load(object sender, EventArgs e)
+        {
 
         }
     }

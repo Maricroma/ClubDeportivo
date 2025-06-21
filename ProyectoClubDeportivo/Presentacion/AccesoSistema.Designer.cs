@@ -133,7 +133,6 @@
             txtClaveDB.Name = "txtClaveDB";
             txtClaveDB.Size = new Size(100, 23);
             txtClaveDB.TabIndex = 9;
-            txtClaveDB.Text = "Clave";
             txtClaveDB.Enter += txtClaveDB_Enter;
             txtClaveDB.Leave += txtClaveDB_Leave;
             // 
@@ -166,6 +165,7 @@
             Name = "AccesoSistema";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AccesoSistema";
+            Load += AccesoSistema_Load;
             ResumeLayout(false);
             PerformLayout();
         }
